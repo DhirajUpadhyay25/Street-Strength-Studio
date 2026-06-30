@@ -3,8 +3,9 @@ import {
   Target,
   Heart,
   Zap,
-  
+  ArrowRight
 } from "lucide-react";
+
 
 
 const About = () => {
@@ -75,8 +76,7 @@ const About = () => {
               <img
                 src="/imagess/about.jpeg"
                 alt=""
-                className="w-full h-[650px] object-cover transition duration-700 group-hover:scale-110"
-              />
+                className="w-full h-[650px] object-cover transition duration-700 group-hover:scale-110" />
 
               <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
 
@@ -175,17 +175,19 @@ const About = () => {
 
             <div className="flex flex-wrap gap-5 mt-10">
 
-              <button className="px-8 py-4 rounded-full bg-gradient-to-r from-orange-500 to-orange-600 text-white font-semibold hover:scale-105 transition">
+             <button>
+              <a href="https://wa.link/xsauiy" target="_blank" rel="noopener noreferrer"className="group mt-8 inline-flex w-40 items-center justify-center gap-3 rounded-2xl bg-gradient-to-r from-orange-400 via-orange-500 to-orange-500 px-8 py-4 font-bold uppercase tracking-[3px] text-black shadow-[0_10px_30px_rgba(163,230,53,0.35)] transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:shadow-[0_15px_40px_rgba(163,230,53,0.55)] active:scale-95">
+             
+              <span>Start Training</span><ArrowRight size={20}  className="transition-transform duration-300 group-hover:translate-x-2"/>
+             </a> 
+            </button>
 
-                Start Training
-
-              </button>
-
-              <button className="px-8 py-4 rounded-full border border-orange-500 text-orange-400 hover:bg-orange-500 hover:text-white transition">
-
-                Learn More
-
-              </button>
+              <button>
+              <a href="https://www.instagram.com/hiten_calisthenics?igsh=MWpjdGlhYmFjeWZxNg==" target="_blank" rel="noopener noreferrer"className="group mt-8 inline-flex w-40 items-center justify-center gap-3 rounded-2xl bg-gradient-to-r from-lime-400 via-lime-500 to-green-500 px-8 py-4 font-bold uppercase tracking-[3px] text-black shadow-[0_10px_30px_rgba(163,230,53,0.35)] transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:shadow-[0_15px_40px_rgba(163,230,53,0.55)] active:scale-95">
+             
+              <span>Learn More </span><ArrowRight size={20}  className="transition-transform duration-300 group-hover:translate-x-2"/>
+             </a> 
+            </button>
 
             </div>
 

@@ -40,7 +40,7 @@ const testimonials = [
   },
 ];
 
-export default function AchievementSection() {
+export default function AchievementS() {
   return (
     <section className="relative bg-black py-24 overflow-hidden">
 

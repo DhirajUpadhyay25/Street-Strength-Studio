@@ -2,7 +2,7 @@ import { Dumbbell } from "lucide-react";
 import {
   FaInstagram,
   FaFacebookF,
-  FaTwitter,
+  FaWhatsapp
 } from "react-icons/fa";
 
 const Footer = () => {
@@ -35,26 +35,26 @@ const Footer = () => {
 
             <ul className="space-y-3">
               <li>
-                <a href="/abc" className="hover:text-orange-500">
+                <a href="/Programs" className="hover:text-orange-500">
                   Beginner
                 </a>
               </li>
 
               <li>
-                <a href="/abc" className="hover:text-orange-500">
+                <a href="/Programs" className="hover:text-orange-500">
                   Intermediate
                 </a>
               </li>
 
               <li>
-                <a href="/abc" className="hover:text-orange-500">
+                <a href="/Programs" className="hover:text-orange-500">
                   Advanced
                 </a>
               </li>
 
               <li>
-                <a href="/abc" className="hover:text-orange-500">
-                  Nutrition
+                <a href="/Contact" className="hover:text-orange-500">
+                  Map
                 </a>
               </li>
             </ul>
@@ -66,14 +66,14 @@ const Footer = () => {
               CONTACT
             </h3>
 
-            <p className="mb-2">📧 info@califit.com</p>
-            <p className="mb-2">📞 +91 8130279213</p>
+            <p className="mb-2">📧 hiteshofficial010@gmail.com</p>
+            <p className="mb-2">📞 +91 9654563119 </p>
             <p>📍 Sec-19 Faridabad, India</p>
 
               <div className="flex gap-10 mt-10">
-          <a href="/" className="hover:text-orange-500"><FaInstagram size={20} /></a>
-          <a href="/" className="hover:text-orange-500"><FaFacebookF size={20} /></a>
-          <a href="/" className="hover:text-orange-500"><FaTwitter size={20} /></a>
+          <a href="https://www.instagram.com/dr_ss_studio?igsh=a2xjOW5pdXBmMmNq" target="_blank" rel="noreferrer" className="hover:text-orange-500"><FaInstagram size={30} /></a>
+          <a href="https://www.instagram.com/hiten_calisthenics?igsh=MWpjdGlhYmFjeWZxNg==" target="_blank" rel="noreferrer" className="hover:text-orange-500"><FaFacebookF size={30} /></a>
+          <a href="https://wa.link/xsauiy" target="_blank" rel="noreferrer" className="hover:text-orange-500"><FaWhatsapp size={30} /></a>
         </div>
         <div className=" mt-10 overflow-hidden rounded-3xl border border-orange-500/20 shadow-[0_0_40px_rgba(249,115,22,.15)]">
 
@@ -95,7 +95,7 @@ const Footer = () => {
         <div className="border-t border-zinc-800 mt-12 pt-6 flex flex-col md:flex-row justify-between items-center">
 
           <p className="text-sm">
-            © 2026 <span className="text-orange-500">Street Strength Studio</span>. All Rights Reserved.
+            ©2026 <span className="text-orange-500">Street Strength Studio</span>. All Rights Reserved.
           </p>
 
           <div className="flex gap-6 mt-4 md:mt-0 text-sm">

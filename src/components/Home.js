@@ -4,6 +4,10 @@ import heroImage from "../assets/images/first.png"; // Replace with your athlete
 import { Dumbbell, ArrowRight } from "lucide-react";
 
 import { Clock3, IndianRupee } from "lucide-react";
+import {
+  FaInstagram,
+  FaWhatsapp
+} from "react-icons/fa";
 
 
 const Home = () => {
@@ -32,9 +36,9 @@ const Home = () => {
 ];
   return (
     <>
-    <section className=" mt-10  relative overflow-hidden bg-[#0A0A0A] min-h-screen flex items-center">
+    <section className=" mt-2  relative overflow-hidden bg-[#0A0A0A] min-h-screen flex items-center">
 
-      {/* Background Glow */}
+      {/* Background Glow */} 
       <div className="absolute inset-0">
         <div className="absolute -top-40 -left-40 w-[500px] h-[500px] rounded-full bg-orange-500/20 blur-[150px]" />
 
@@ -89,24 +93,24 @@ const Home = () => {
 
             <div className="mt-10 flex flex-wrap gap-5">
 
-              <button className="group px-8 py-4 bg-orange-500 rounded-xl text-black font-bold flex items-center gap-3 hover:bg-orange-400 duration-300">
+              
+              <a href="https://wa.link/xsauiy" target="_blank" rel="noopener noreferrer"className="group mt-8 inline-flex w-60 items-center justify-center gap-3 rounded-2xl bg-gradient-to-r from-lime-400 via-lime-500 to-green-500 px-8 py-4 font-bold uppercase tracking-[3px] text-black shadow-[0_10px_30px_rgba(163,230,53,0.35)] transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:shadow-[0_15px_40px_rgba(163,23,53,0.55)] active:scale-90">
+              <FaWhatsapp className="text-2xl transition-transform duration-300 group-hover:rotate-12" />
+              <span>Start </span><ArrowRight size={20}  className="transition-transform duration-300 group-hover:translate-x-2"/>
+              </a> 
+         
 
-                Start Training
+             
 
-                <ArrowRight
-                  className="group-hover:translate-x-1 duration-300"
-                  size={20}
-                />
 
-              </button>
+            <a href="https://www.instagram.com/dr_ss_studio?igsh=a2xjOW5pdXBmMmNq" target="_blank" rel="noopener noreferrer"className="group mt-8 inline-flex w-60 items-center justify-center gap-3 rounded-2xl bg-gradient-to-r from-orange-400 via-orange-500 to-orange-500 px-8 py-4 font-bold uppercase tracking-[3px] text-black shadow-[0_10px_30px_rgba(163,230,53,0.35)] transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:shadow-[0_15px_40px_rgba(163,23,53,0.55)] active:scale-90">
+              <FaInstagram className="text-2xl transition-transform duration-300 group-hover:rotate-12" />
+              <Play size={18} />
+              <span>Follow </span><ArrowRight size={20}  className="transition-transform duration-300 group-hover:translate-x-2"/>
+              </a>
+                
 
-              <button className="group px-8 py-4 border border-gray-700 rounded-xl text-white hover:border-orange-500 hover:text-orange-500 duration-300 flex items-center gap-3">
-
-                <Play size={18} />
-
-                Watch Video
-
-              </button>
+             
 
             </div>
 
@@ -372,20 +376,24 @@ const Home = () => {
 
 </div>
      <div className="flex justify-between items-center">
-       <button className="mt-4 flex items-center gap-2 rounded-full bg-green-500 px-6 py-3 font-semibold transition hover:bg-orange-600">
+                  
+                   <a href="https://wa.link/xsauiy" target="_blank" rel="noopener noreferrer">
 
-                  Enroll Now
+                  <button className="mt-4 flex items-center gap-2 rounded-full bg-green-500 px-6 py-3 font-semibold transition hover:bg-orange-600">
+
+                   Enroll Now
 
                   <ArrowRight size={18} />
 
-                </button>
+                </button> </a>
+                <a href="https://www.instagram.com/dr_ss_studio?igsh=a2xjOW5pdXBmMmNq" target="_blank" rel="noopener noreferrer">
        <button className="mt-4 flex items-center gap-2 rounded-full bg-orange-500 px-6 py-3 font-semibold transition hover:bg-orange-600">
 
                   Learn More
 
                   <ArrowRight size={18} />
 
-                </button>
+                </button> </a>
      </div>
                
 
@@ -398,6 +406,7 @@ const Home = () => {
         </div>
     
     <div className=" mt-20 text-center flex items-center justify-center ">
+      <a href="/Programs">
           <button className="group px-8 py-4  bg-orange-500 rounded-xl text-black font-bold flex items-center gap-3 hover:bg-green-400 duration-300">
 
                 View All Programs
@@ -407,7 +416,7 @@ const Home = () => {
                   size={20}
                 />
 
-              </button>
+              </button> </a>
               </div>
         {/* Stats */}
 
@@ -448,17 +457,22 @@ const Home = () => {
 
         {/* Buttons */}
         <div className="mt-12 flex flex-col items-center justify-center gap-5 sm:flex-row">
+
+                             <a href="https://wa.link/xsauiy" target="_blank" rel="noopener noreferrer">
+
+          
           <button className="group flex items-center gap-3 rounded-full bg-gradient-to-r from-orange-500 to-orange-600 px-8 py-4 text-lg font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-[0_0_40px_rgba(249,115,22,0.6)]">
             Get Started
             <ArrowRight
               size={20}
               className="transition-transform duration-300 group-hover:translate-x-2"
             />
-          </button>
-
+          </button></a>
+             
+             <a href="/Contact">
           <button className="rounded-full border border-orange-500 px-8 py-4 text-lg font-semibold text-orange-400 transition-all duration-300 hover:bg-orange-500 hover:text-white">
             Contact Us
-          </button>
+          </button> </a>
         </div>
 
         {/* Stats */}
@@ -483,7 +497,7 @@ const Home = () => {
             <p className="mt-2 text-gray-400">Support</p>
           </div>
            <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl">
-            <h3 className="text-3xl font-bold text-orange-500">6 Days(M-S)</h3>
+            <h3 className="text-3xl font-bold text-orange-500">6 Days</h3>
             <p className="mt-2 text-gray-400">Opens</p>
           </div>
           <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl">

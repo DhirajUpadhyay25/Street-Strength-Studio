@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { Menu, X, ArrowRight } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,23 +22,12 @@ const Navbar = () => {
           <div className="flex items-center justify-between h-20">
 
             {/* Logo */}
-            <Link to="/" className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-md bg-lime-400 flex items-center justify-center">
-                <span className="text-black font-black text-xl">
-                 ⚡︎
-                </span>
-              </div>
-
-              <div>
-                <h2 className="text-white text-sm md:text-lg font-semibold tracking-wider">
-                  STREET STRENGTH
-                </h2>
-
-                <p className="text-lime-400 text-[10px] tracking-[4px] uppercase">
-                  Studio
-                </p>
-              </div>
-            </Link>
+         <Link to="/" className="flex items-center gap-3">
+         <img src="/imagess/logo.png" alt="Logo" className="w-10 h-10 object-contain"/>
+          <h1 className="text-ml font-black text-white">
+          STREET STRENGTH <br/><span className="text-orange-400">STUDIO</span>
+          </h1>
+          </Link>
 
             {/* Desktop Menu */}
             <nav className="hidden lg:flex items-center gap-10">
@@ -70,14 +60,11 @@ const Navbar = () => {
             </nav>
 
             {/* CTA Button */}
-            <div className="hidden lg:block ">
-              <button className="bg-lime-400 text-black px-8 py-4 rounded-xl font-bold uppercase tracking-wider hover:scale-105 transition duration-300 flex items-center gap-2">
-                Join Now
-                <ArrowRight size={18} />
-              </button>
-              
-
-              
+            <div className="hidden lg:block mb-6 ">
+              <a href="https://wa.link/xsauiy" target="_blank" rel="noopener noreferrer"className="group mt-8 inline-flex w-full items-center justify-center gap-3 rounded-2xl bg-gradient-to-r from-lime-400 via-lime-500 to-green-500 px-8 py-4 font-bold uppercase tracking-[3px] text-black shadow-[0_10px_30px_rgba(163,230,53,0.35)] transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:shadow-[0_15px_40px_rgba(163,230,53,0.55)] active:scale-95">
+              <FaWhatsapp className="text-2xl transition-transform duration-300 group-hover:rotate-12" />
+              <span>Join Now</span><ArrowRight size={20}  className="transition-transform duration-300 group-hover:translate-x-2"/>
+             </a> 
             </div>
 
             {/* Mobile Menu Button */}
@@ -103,26 +90,13 @@ const Navbar = () => {
         <div className="flex justify-between items-center p-5 border-b border-neutral-800">
 
           {/* Logo */}
-          <Link
-            to="/"
-            className="flex items-center gap-3"
-            onClick={() => setIsOpen(false)}
-          >
-            <div className="w-12 h-12 rounded-md bg-lime-400 flex items-center justify-center">
-              <span className="text-black font-black text-xl">
-                ⚡︎
-              </span>
-            </div>
-
-            <div>
-              <h2 className="text-white text-sm font-semibold tracking-wider">
-                STREET STRENGTH
-              </h2>
-
-              <p className="text-lime-400 text-[10px] tracking-[4px] uppercase">
-                Studio
-              </p>
-            </div>
+          <Link to="/" className="flex items-center gap-3"
+            onClick={() => setIsOpen(false)}>
+         <img src="/imagess/logo.png" alt="Logo" className="w-10 h-10 object-contain"/>
+          <h1 className="text-ml font-black text-white">
+          STREET STRENGTH <br/><span className="text-orange-400">STUDIO</span>
+          </h1>
+           
           </Link>
 
           <button
@@ -152,11 +126,27 @@ const Navbar = () => {
               {link.name}
             </NavLink>
           ))}
+       
+       <a
+  href="https://wa.link/xsauiy"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="group mt-8 inline-flex w-full items-center justify-center gap-3 rounded-2xl bg-gradient-to-r from-lime-400 via-lime-500 to-green-500 px-8 py-4 font-bold uppercase tracking-[3px] text-black shadow-[0_10px_30px_rgba(163,230,53,0.35)] transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:shadow-[0_15px_40px_rgba(163,230,53,0.55)] active:scale-95"
+>
+  <FaWhatsapp className="text-2xl transition-transform duration-300 group-hover:rotate-12" />
 
-          <button className="mt-8 bg-lime-400 text-black py-4 rounded-xl font-bold uppercase tracking-widest flex items-center justify-center gap-2 hover:scale-[1.02] transition">
-            Join Now
-            <ArrowRight size={18} />
-          </button>
+  <span>Join Now</span>
+
+  <ArrowRight
+    size={20}
+    className="transition-transform duration-300 group-hover:translate-x-2"
+  />
+</a>
+      
+          {/* <button className="mt-8 bg-lime-400 text-black py-4 rounded-xl font-bold uppercase tracking-widest flex items-center justify-center gap-2 hover:scale-[1.02] transition">
+            <a href="https://wa.link/xsauiy" target="_new"> Join Now
+            <ArrowRight size={18} />  </a>
+          </button> */}
      <div className="overflow-hidden rounded-3xl border border-orange-500/20 shadow-[0_0_40px_rgba(249,115,22,.15)]">
 
         <iframe

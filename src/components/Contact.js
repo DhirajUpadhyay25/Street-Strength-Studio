@@ -4,38 +4,39 @@ import {
   MapPin,
   Clock3,
   ArrowUpRight,
+  ArrowRight
   
 
  
 } from "lucide-react";
 import {
   FaInstagram,
-  FaFacebookF,
+  FaWhatsapp
 } from "react-icons/fa";
 
 const contactInfo = [
   {
     icon: Phone,
     title: "Call Me",
-    value: "+91 98765 43210",
+    value: "+91 9654563119",
     color: "text-orange-500",
   },
   {
     icon: Mail,
     title: "Email",
-    value: "hello@califit.com",
+    value: "hiteshofficial010@gmail.com",
     color: "text-cyan-400",
   },
   {
     icon: MapPin,
     title: "Location",
-    value: "Faridabad, Haryana",
+    value: "Shop no 3, First Floor, Gopi Colony, Sec-19, Old Faridabad",
     color: "text-red-400",
   },
   {
     icon: Clock3,
     title: "Availability",
-    value: "Mon - Sat | 7AM - 9PM",
+    value: "Mon - Sat | 6AM - 9PM",
     color: "text-green-400",
   },
 ];
@@ -44,14 +45,14 @@ const socials = [
   {
     icon: FaInstagram,
     title: "Instagram",
-    username: "@califit",
+    username: "@DR_SS_STUDIO",
     gradient: "from-pink-500 via-fuchsia-500 to-orange-500",
   },
 
   {
-    icon: FaFacebookF,
-    title: "Facebook",
-    username: "CaliFit",
+    icon: FaInstagram,
+    title: "Instagram",
+    username: "@HITEN_CALISTHENICS",
     gradient: "from-blue-500 to-cyan-500",
   },
 ];
@@ -155,61 +156,46 @@ export default function Contact() {
 
         {/* Social */}
 
-        <div className="mt-24">
-
-          <h2 className="text-4xl font-black text-white mb-10">
-
-            Follow My Journey
-
-          </h2>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-
+        <div className="mt-12">
+           <h2 className="text-4xl font-black text-white mb-10"> Follow My Journey  </h2>
+           <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-12">
             {socials.map((item, index) => {
-
               const Icon = item.icon;
-
               return (
-
-                <a
-                  href="/"
-                  key={index}
-                  className={`group rounded-3xl bg-gradient-to-r ${item.gradient} p-6 transition duration-500 hover:scale-105 hover:-translate-y-2`}
-                >
-
-                  <div className="flex justify-between">
-
-                    <div className="h-14 w-14 rounded-2xl bg-white/20 flex items-center justify-center backdrop-blur-xl">
-
-                      <Icon size={28} />
-
-                    </div>
-
-                    <ArrowUpRight className="group-hover:rotate-45 transition" />
-
-                  </div>
-
+                <a href="https://www.instagram.com/dr_ss_studio?igsh=a2xjOW5pdXBmMmNq"  key={index} target="_new" className={`group rounded-3xl bg-gradient-to-r ${item.gradient} p-6 transition duration-500 hover:scale-105 hover:-translate-y-2`} >
+                <div className="flex justify-between">
+                <div className="h-14 w-14 rounded-2xl bg-white/20 flex items-center justify-center backdrop-blur-xl">
+                <Icon size={28} />
+                </div>
+                <ArrowUpRight className="group-hover:rotate-45 transition" /> </div>
                   <h3 className="mt-8 text-2xl font-bold text-white">
-
                     {item.title}
-
                   </h3>
-
                   <p className="text-white/80 mt-2">
-
-                    {item.username}
-
-                  </p>
-
-                </a>
-
-              );
-
-            })}
-
+                    {item.username} </p> </a>  );  })}
+                  
           </div>
+          <div className="grid md:grid-cols-2 gap-8 mt-20"> 
+          <a href="https://wa.link/xsauiy" target="_blank" rel="noopener noreferrer" className="group relative overflow-hidden rounded-3xl bg-gradient-to-r from-green-500 via-emerald-500 to-green-600 p-6 transition duration-500 hover:-translate-y-2 hover:scale-105 hover:shadow-[0_0_40px_rgba(34,197,94,.45)]">
+          <div className="absolute -top-10 -right-10 h-32 w-32 rounded-full bg-orange/10 blur-3xl opacity-0 group-hover:opacity-100 transition duration-500"></div>
+          <div className="flex justify-between items-start">
+          <div className="h-16 w-16 rounded-2xl bg-orange/20 backdrop-blur-xl flex items-center justify-center">
+           <FaWhatsapp className="text-white text-4xl" />
+           </div>
+           <ArrowUpRight  size={28}  className="text-white transition duration-300 group-hover:rotate-45"/>
+         </div>
+          <div className="mt-5">
+          <h3 className="text-3xl font-bold text-white"> WhatsApp</h3>
+          <p className="mt-1 text-green-100"> +91 9654563119</p>
+         <div className="mt-2 inline-flex rounded-full bg-white/20 px-4 py-2 text-sm font-semibold text-white backdrop-blur-xl">
+          Chat Now →  </div>
+         </div>
+         </a>
+         </div>
 
         </div>
+
+        
 
         {/* CTA */}
 
@@ -227,12 +213,18 @@ export default function Contact() {
             structured calisthenics coaching.
 
           </p>
+          <div>
+              <a href="https://wa.link/xsauiy" target="_blank" rel="noopener noreferrer"className="group mt-8 inline-flex w-80 items-center justify-center gap-3 rounded-2xl bg-gradient-to-r from-lime-400 via-lime-500 to-green-500 px-8 py-4 font-bold uppercase tracking-[3px] text-black shadow-[0_10px_30px_rgba(163,230,53,0.35)] transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:shadow-[0_15px_40px_rgba(163,230,53,0.55)] active:scale-95">
+              <FaWhatsapp className="text-2xl transition-transform duration-300 group-hover:rotate-12" />
+              <span>Join Now</span><ArrowRight size={20}  className="transition-transform duration-300 group-hover:translate-x-2"/>
+             </a> 
+            </div>
 
-          <button className="mt-10 rounded-full bg-gradient-to-r from-orange-500 to-orange-600 px-10 py-4 text-lg font-bold text-white transition hover:scale-105 hover:shadow-[0_0_35px_rgba(249,115,22,.5)]">
+          {/* <button className="mt-10 rounded-full bg-gradient-to-r from-orange-500 to-orange-600 px-10 py-4 text-lg font-bold text-white transition hover:scale-105 hover:shadow-[0_0_35px_rgba(249,115,22,.5)]">
 
             Book Free Trail
 
-          </button>
+          </button> */}
 
         </div>
 

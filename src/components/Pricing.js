@@ -1,4 +1,12 @@
 import { useState } from "react";
+import {
+  ArrowRight
+} from "lucide-react";
+import {
+  FaWhatsapp
+} from "react-icons/fa";
+
+
 export default function Pricing() {
   const plans = {
   Monthly: {
@@ -73,9 +81,12 @@ export default function Pricing() {
             <li>✔ GAmes and Challenges </li>
           </ul>
 
-          <button className="w-full mt-10 py-4 rounded-xl bg-gradient-to-r from-orange-500 to-orange-600 font-bold hover:scale-105 transition">
-            Get Started
-          </button>
+          <div className="flex flex-center">
+              <a href="https://wa.link/xsauiy" target="_blank" rel="noopener noreferrer"className="group mt-8 inline-flex w-80 items-center justify-center gap-3 rounded-2xl bg-gradient-to-r from-lime-400 via-lime-500 to-green-500 px-8 py-4 font-bold uppercase tracking-[3px] text-black shadow-[0_10px_30px_rgba(163,230,53,0.35)] transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:shadow-[0_15px_40px_rgba(163,230,53,0.55)] active:scale-95">
+              <FaWhatsapp className="text-2xl transition-transform duration-300 group-hover:rotate-12" />
+              <span>Get Started</span><ArrowRight size={20}  className="transition-transform duration-300 group-hover:translate-x-2"/>
+             </a> 
+            </div>
         </div>
 
       </div>

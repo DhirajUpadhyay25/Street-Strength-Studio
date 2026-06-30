@@ -1,11 +1,19 @@
 import { X, Clock3, Star, PlayCircle, CheckCircle } from "lucide-react";
-import ReactPlayer from "react-player";
+// import ReactPlayer from "react-player";
+import { InstagramEmbed } from "react-social-media-embed";
+
+import {
+  ArrowRight
+} from "lucide-react";
+import {
+  FaWhatsapp
+} from "react-icons/fa";
 
 export default function ProgramModal({ open, onClose, program }) {
   if (!open || !program) return null;
 
   return (
-    <div className="fixed inset-0 z-50 bg-black/80  flex items-center justify-center p-5">
+    <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-5">
 
       <div className="relative w-full max-w-6xl max-h-[95vh] overflow-y-auto rounded-3xl border border-orange-500/20 bg-zinc-950">
 
@@ -23,16 +31,14 @@ export default function ProgramModal({ open, onClose, program }) {
 
           <div>
 
-            <div className="aspect-video">
-
-              <ReactPlayer
-                url={program.video}
-                controls
-                width="100%"
-                height="100%"
-              />
-
-            </div>
+          
+<div className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl mx-auto">
+    <InstagramEmbed
+      url={program.video}
+      width="100%"
+    />
+ 
+</div>
 
             <div className="p-8">
 
@@ -235,11 +241,12 @@ export default function ProgramModal({ open, onClose, program }) {
 
               </div>
 
-              <button className="px-8 py-4 rounded-xl bg-gradient-to-r from-orange-500 to-orange-600 font-semibold hover:scale-105 transition">
-
-                Buy Now
-
-              </button>
+             <button>
+              <a href="https://wa.link/xsauiy" target="_blank" rel="noopener noreferrer"className="group mt-8 inline-flex w-40 items-center justify-center gap-3 rounded-2xl bg-gradient-to-r from-lime-400 via-lime-500 to-green-500 px-8 py-4 font-bold uppercase tracking-[3px] text-black shadow-[0_10px_30px_rgba(163,230,53,0.35)] transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:shadow-[0_15px_40px_rgba(163,230,53,0.55)] active:scale-95">
+              <FaWhatsapp className="text-2xl transition-transform duration-300 group-hover:rotate-12" />
+              <span>BUY</span><ArrowRight size={20}  className="transition-transform duration-300 group-hover:translate-x-2"/>
+             </a> 
+            </button>
 
             </div>
 

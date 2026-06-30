@@ -1,6 +1,5 @@
 import { ImageIcon } from "lucide-react";
 import { Play, Eye, Heart } from "lucide-react";
-import AchievementS from "./Achievements ";
 
 const gallery = [
   {
@@ -292,7 +291,7 @@ export default function Gallery() {
       </div>
 
     </section>
-    <AchievementS/>
+   
     </>
 
 
