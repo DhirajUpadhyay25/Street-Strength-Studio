@@ -1,70 +1,84 @@
-# Getting Started with Create React App
+# Street Strength Studio – Calisthenics Training Platform
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+**Street Strength Studio** is a modern, responsive calisthenics and bodyweight fitness website designed to inspire, educate, and help users begin or advance their calisthenics journey. The platform showcases structured training programs, age-based fitness guidance, exercise categories, and an engaging user experience through modern web design and interactive media.
 
-In the project directory, you can run:
+Built with **React.js** and **JavaScript**, the project emphasizes responsive layouts, reusable components, smooth navigation, and performance optimization to deliver a professional frontend experience across desktop, tablet, and mobile devices.
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Features
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+* Modern and responsive UI/UX
+* Full-screen hero section with background video
+* Age-based training programs (5–65+ years)
+* Calisthenics exercise categories
+* Training program showcase
+* Interactive cards with animations
+* Responsive navigation
+* Program details with embedded videos
+* Mobile-first design
+* Optimized component-based architecture
+* Fast loading and smooth user experience
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Technologies Used
 
-### `npm run build`
+* React.js
+* JavaScript (ES6+)
+* HTML5
+* CSS3
+* React Router
+* Responsive Design
+* Git & GitHub
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Purpose
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The goal of this project is to provide an engaging digital platform for a calisthenics studio while demonstrating modern frontend development practices using React. The application focuses on clean design, scalability, maintainable code, and an intuitive user experience.
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Future Enhancements
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+* User Authentication
+* Online Class Booking
+* Membership Management
+* Workout Progress Tracking
+* Blog & Fitness Articles
+* Nutrition Plans
+* Payment Gateway Integration
+* Admin Dashboard
+* Testimonials & Reviews
+* Dark Mode
+* SEO Optimization
+* Progressive Web App (PWA)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Learning Outcomes
 
-## Learn More
+During the development of this project, I strengthened my understanding of:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+* React Component Architecture
+* React Router
+* State Management
+* Responsive Web Design
+* Component Reusability
+* UI/UX Design Principles
+* Performance Optimization
+* Git & GitHub Workflow
+* Modern Frontend Development
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
+## Author
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+**Dhiraj Upadhyay**
 
-### Analyzing the Bundle Size
+Frontend Developer | React Developer | Java Full Stack Developer
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Passionate about building modern, responsive, and user-centric web applications while continuously learning new technologies and best development practices.
