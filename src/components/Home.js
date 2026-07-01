@@ -23,7 +23,7 @@ const Home = () => {
     title: "Fat Loss",
     image: "/imagess/fatloss.png",
     desc: "Build explosive power with progressive training.",
-     price: 899,
+     price: 999,
     time: "4 weeks"
   },
   {
