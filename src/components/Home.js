@@ -193,7 +193,7 @@ const Home = () => {
 
             <h1 className="text-gray-400 mt-2">
               Mon - Sat : 6 AM - 9 AM Morning <br/>
-              & 5 PP - 9 PM Evening
+              & 5 Pm - 9 PM Evening
 
               <br />
               Sunday : Closed
