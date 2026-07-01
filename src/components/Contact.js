@@ -214,17 +214,12 @@ export default function Contact() {
 
           </p>
           <div>
-              <a href="https://wa.link/xsauiy" target="_blank" rel="noopener noreferrer"className="group mt-8 inline-flex w-80 items-center justify-center gap-3 rounded-2xl bg-gradient-to-r from-lime-400 via-lime-500 to-green-500 px-8 py-4 font-bold uppercase tracking-[3px] text-black shadow-[0_10px_30px_rgba(163,230,53,0.35)] transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:shadow-[0_15px_40px_rgba(163,230,53,0.55)] active:scale-95">
+              <a href="https://wa.link/xsauiy" target="_blank" rel="noopener noreferrer"className="group mt-8 inline-flex w-60 items-center justify-center gap-3 rounded-2xl bg-gradient-to-r from-lime-400 via-lime-500 to-green-500 px-8 py-4 font-bold uppercase tracking-[3px] text-black shadow-[0_10px_30px_rgba(163,230,53,0.35)] transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:shadow-[0_15px_40px_rgba(163,230,53,0.55)] active:scale-95">
               <FaWhatsapp className="text-2xl transition-transform duration-300 group-hover:rotate-12" />
               <span>Join Now</span><ArrowRight size={20}  className="transition-transform duration-300 group-hover:translate-x-2"/>
              </a> 
             </div>
 
-          {/* <button className="mt-10 rounded-full bg-gradient-to-r from-orange-500 to-orange-600 px-10 py-4 text-lg font-bold text-white transition hover:scale-105 hover:shadow-[0_0_35px_rgba(249,115,22,.5)]">
-
-            Book Free Trail
-
-          </button> */}
 
         </div>
 
@@ -290,7 +285,6 @@ export default function Contact() {
       {/* Map */}
 
       <div className="overflow-hidden rounded-3xl border border-orange-500/20 shadow-[0_0_40px_rgba(249,115,22,.15)]">
-
         <iframe
           title="Google Map"
          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3508.9310873275435!2d77.31538177529274!3d28.421336175780738!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cdd707738a871%3A0x452e25c7e43b4474!2sStreet%20strength%20studio!5e0!3m2!1sen!2sin!4v1782735953532!5m2!1sen!2sin"
@@ -299,13 +293,6 @@ export default function Contact() {
           style={{ border: 0 }}
           loading="lazy"
           allowFullScreen />
-
-    {/* <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3508.9310873275435!2d77.31538177529274!3d28.421336175780738!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cdd707738a871%3A0x452e25c7e43b4474!2sStreet%20strength%20studio!5e0!3m2!1sen!2sin!4v1782735953532!5m2!1sen!2sin"
-     width="600" height="450" style="border:0;" 
-    allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"/> */}
-
-
-
       </div>
 
     </div>

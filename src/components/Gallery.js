@@ -1,71 +1,77 @@
 import { ImageIcon } from "lucide-react";
 import { Play, Eye, Heart } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+
+import {
+  FaInstagram
+
+} from "react-icons/fa";
 
 const gallery = [
   {
     id: 1,
-    image: "/imagess/program1.png",
-    title: "Muscle Up Training",
+    image: "/imagess/g8.jpeg",
+    title: "Studio",
     className: "md:row-span-2",
   },
   {
     id: 2,
-    image: "/images/gallery2.jpg",
+    image: "/imagess/g2.png",
     title: "Morning Workout",
   },
   {
     id: 3,
-    image: "/images/gallery3.jpg",
+    image: "/imagess/g3.png",
     title: "Group Session",
   },
   {
     id: 4,
-    image: "/imagess/gallery4.jpg",
+    image: "/imagess/g4.png",
     title: "Calisthenics",
     className: "md:row-span-2",
   },
   {
     id: 5,
-    image: "/images/gallery5.jpg",
-    title: "Gym Interior",
+    image: "/imagess/g5.png",
+    title: " Equipment ",
   },
   {
     id: 6,
-    image: "/images/gallery6.jpg",
+    image: "/imagess/g6.png",
     title: "Handstand Practice",
   },
 ];
 const reels = [
   {
     id: 1,
-    image: "/imagess/program1.png",
-    title: "Muscle Up Tutorial",
-    views: "2.4M",
-    likes: "156K",
-    badge: "Trending",
+    video: "/videos/v2.mp4",
+    title: "Balance",
+    views: "10.5M",
+    likes: "186K",
+    badge: "Popular",
     
   },
   {
     id: 2,
-    image: "/images/reel2.jpg",
-    title: "Handstand Progress",
-    views: "980K",
-    likes: "84K",
-    badge: "Popular",
+    video: "/videos/v1.mp4",
+    title: "Studio",
+    views: "50k",
+    likes: "2k",
+    badge: "Trending",
   },
   {
     id: 3,
-    image: "/images/reel3.jpg",
-    title: "Front Lever",
-    views: "1.7M",
+    video: "/videos/v3.mp4",
+    title: "Rope Climbing",
+    views: "10.7M",
     likes: "121K",
     badge: "Viral",
   },
   {
     id: 4,
-    image: "/images/reel4.jpg",
-    title: "Planche Journey",
-    views: "3.1M",
+ video: "/videos/v4.mp4",
+     title: "Handstand Walk",
+    views: "11.1M",
     likes: "205K",
     badge: "Featured",
   },
@@ -207,12 +213,14 @@ export default function Gallery() {
               className="group relative overflow-hidden rounded-[30px] border border-zinc-800 hover:border-orange-500 transition duration-500 hover:-translate-y-3"
             >
 
-              <img
-                src={item.image}
-                alt=""
-                className="h-[520px] w-full object-cover transition duration-700 group-hover:scale-110"
-              />
-
+            <video
+  src={item.video}
+  className="h-[520px] w-full object-cover"
+  autoPlay
+  muted
+  loop
+  playsInline
+/>
               {/* Overlay */}
 
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"/>
@@ -274,11 +282,12 @@ export default function Gallery() {
 
                 </div>
 
-                <button className="mt-6 w-full rounded-xl bg-gradient-to-r from-orange-500 to-orange-600 py-3 font-semibold text-white transition hover:scale-105">
-
-                  Watch Reel
-
-                </button>
+              
+            <a href="https://www.instagram.com/dr_ss_studio?igsh=a2xjOW5pdXBmMmNq" target="_blank" rel="noopener noreferrer"className="group mt-8 inline-flex w-60 items-center justify-center gap-3 rounded-2xl bg-gradient-to-r from-orange-400 via-orange-500 to-orange-500 px-8 py-4 font-bold uppercase tracking-[3px] text-black shadow-[0_10px_30px_rgba(163,230,53,0.35)] transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:shadow-[0_15px_40px_rgba(163,23,53,0.55)] active:scale-90">
+              <FaInstagram className="text-2xl transition-transform duration-300 group-hover:rotate-12" />
+              <Play size={18} />
+              <span>watch reel </span><ArrowRight size={20}  className="transition-transform duration-300 group-hover:translate-x-2"/>
+              </a>
 
               </div>
 

@@ -173,7 +173,7 @@ const About = () => {
 
             {/* Buttons */}
 
-            <div className="flex flex-wrap gap-5 mt-10">
+            <div className="flex flex-nowrap gap-1 mt-5">
 
              <button>
               <a href="https://wa.link/xsauiy" target="_blank" rel="noopener noreferrer"className="group mt-8 inline-flex w-40 items-center justify-center gap-3 rounded-2xl bg-gradient-to-r from-orange-400 via-orange-500 to-orange-500 px-8 py-4 font-bold uppercase tracking-[3px] text-black shadow-[0_10px_30px_rgba(163,230,53,0.35)] transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:shadow-[0_15px_40px_rgba(163,230,53,0.55)] active:scale-95">
@@ -201,10 +201,10 @@ const About = () => {
  
 
 
- <section className="relative bg-black py-24 overflow-hidden">
+ <section className="relative bg-black  mt-0 overflow-hidden">
 
       {/* Background Glow */}
-      <div className="absolute top-20 left-10 w-72 h-72 bg-orange-500/10 rounded-full blur-[120px]" />
+      <div className="absolute top-0 left-10 w-72 h-72 bg-orange-500/10 rounded-full blur-[120px]" />
       <div className="absolute bottom-10 right-10 w-80 h-80 bg-orange-500/10 rounded-full blur-[140px]" />
 
       <div className="relative max-w-7xl mx-auto px-6">
@@ -213,7 +213,7 @@ const About = () => {
 
         <div className="text-center mb-16">
 
-          <span className="text-orange-500 uppercase tracking-[4px] font-semibold">
+          <span className=" mt-0 text-orange-500 uppercase tracking-[4px] font-semibold">
             WHY CHOOSE ME
           </span>
 
@@ -222,7 +222,7 @@ const About = () => {
             <span className="text-orange-500"> Values</span>
           </h2>
 
-          <p className="mt-5 text-gray-400 max-w-2xl mx-auto">
+          <p className="mt-1 text-gray-400 max-w-2xl mx-auto">
             My coaching philosophy is built around discipline,
             consistency and helping every athlete become stronger.
           </p>
@@ -275,13 +275,7 @@ const About = () => {
 
       </div>
     </section>
-
- 
-
 </>
-
-
-
   );
 };
 

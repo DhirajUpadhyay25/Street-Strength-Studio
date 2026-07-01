@@ -21,7 +21,7 @@ const data = {
       image: "/imagess/b1.png",
       video: "https://www.instagram.com/reel/DUqVjTdE-ES/?igsh=d3RqbDg4cmEzbTM1",
       duration: "4 Weeks",
-      price: "₹899",
+      price: "₹999",
       level: "Beginner",
       description:
         "Learn proper push-up form, strength progression and endurance."
@@ -32,7 +32,7 @@ const data = {
       image: "/imagess/b2.1.jpeg",
       video: "https://www.instagram.com/reel/DUc4oa6k-7J/?igsh=bDE5Yzlld3F0NDZz",
       duration: "6 Weeks",
-      price: "₹899",
+      price: "₹999",
       level: "Beginner",
       description:
         "develops strength, flexibility, balance, and coordination."
@@ -43,7 +43,7 @@ const data = {
       image: "/imagess/b2.png",
       video: "https://www.instagram.com/reel/DZaN32JJxDL/?igsh=djV1ZXRxcGF1a3l5",
       duration: "6 Weeks",
-      price: "₹899",
+      price: "₹999",
       level: "Beginner",
       description:
         "Dead Hang & Hollow Body Hold."
@@ -124,9 +124,9 @@ const data = {
 
   return (
     <>
-    <section className="bg-black py-24 text-white">
+    <section className=" relative bg-black py-28 text-white overflow-hidden">
 
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-6xl mx-auto px-4">
 
         <div className="text-center">
 
@@ -148,15 +148,15 @@ const data = {
 
         {/* Tabs */}
 
-        <div className="flex justify-center mt-14">
+        <div className="flex justify-center mx-auto max-w-2xl mt-10">
 
-          <div className="bg-zinc-900 rounded-full p-2 flex gap-3 border border-orange-500/20">
+          <div className="bg-zinc-900 rounded-full p-3 flex gap-2 border border-orange-500/20">
 
             {["Beginner","Intermediate","Advanced"].map((item)=>(
               <button
                 key={item}
                 onClick={()=>setTab(item)}
-                className={`px-8 py-3 rounded-full font-semibold transition-all duration-300
+                className={`px-5 py-3 rounded-full font-semibold transition-all duration-300
                 ${
                   tab===item
                   ? "bg-orange-500 text-white shadow-lg shadow-orange-500/40"
@@ -190,20 +190,14 @@ const data = {
                 />
 
                 <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent"/>
-
-                <button className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
-
-                  <PlayCircle onClick={()=>{
-setSelectedProgram(course);
-setOpenModal(true);
-}}                   
+                  <button className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+                    <PlayCircle onClick={()=>{
+                     setSelectedProgram(course);
+                     setOpenModal(true);
+                     }}                   
                     size={70}
-                    className="text-orange-500"
-                  />
-                  
-                     
+                    className="text-orange-500"/>    
                 </button>
-
               </div>
 
               <div className="p-6">
@@ -255,20 +249,15 @@ setOpenModal(true);
 
                 </div>
 
-                <div className="grid grid-cols-2 gap-4 mt-6">
+                <div className="flex text-center gap-1">
+                 <button onClick={()=>{setSelectedProgram(course);setOpenModal(true);}}
+                 className="group mt-8 inline-flex w-40 items-center justify-center gap-2 rounded-2xl bg-gradient-to-r w-40 from-orange-400 via-lime-500 to-orange-500 px-4 py-4 font-bold uppercase tracking-[3px] text-black shadow-[0_10px_30px_rgba(163,230,53,0.35)] transition-all 
+                 duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:shadow-[0_15px_40px_rgba(163,230,53,0.55)] active:scale-95">
+                 Preview
+                 </button>
 
-                 <button
-onClick={()=>{
-setSelectedProgram(course);
-setOpenModal(true);
-}}
-className="group mt-8 inline-flex w-40 items-center justify-center gap-3 rounded-2xl bg-gradient-to-r from-orange-400 via-lime-500 to-orange-500 px-8 py-4 font-bold uppercase tracking-[3px] text-black shadow-[0_10px_30px_rgba(163,230,53,0.35)] transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:shadow-[0_15px_40px_rgba(163,230,53,0.55)] active:scale-95"
->
-Preview
-</button>
-
-         <button>
-              <a href="https://wa.link/xsauiy" target="_blank" rel="noopener noreferrer"className="group mt-8 inline-flex w-40 items-center justify-center gap-3 rounded-2xl bg-gradient-to-r from-lime-400 via-lime-500 to-green-500 px-8 py-4 font-bold uppercase tracking-[3px] text-black shadow-[0_10px_30px_rgba(163,230,53,0.35)] transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:shadow-[0_15px_40px_rgba(163,230,53,0.55)] active:scale-95">
+               <button>
+              <a href="https://wa.link/xsauiy" target="_blank" rel="noopener noreferrer"className="group mt-8 inline-flex w-40 items-center justify-center gap-3 rounded-2xl bg-gradient-to-r from-lime-400 via-lime-500 to-green-500 px-4 py-4 font-bold uppercase tracking-[3px] text-black shadow-[0_10px_30px_rgba(163,230,53,0.35)] transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:shadow-[0_15px_40px_rgba(163,230,53,0.55)] active:scale-95">
               <FaWhatsapp className="text-2xl transition-transform duration-300 group-hover:rotate-12" />
               <span>Enroll</span><ArrowRight size={20}  className="transition-transform duration-300 group-hover:translate-x-2"/>
              </a> 

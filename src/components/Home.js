@@ -1,6 +1,5 @@
 import React from "react";
 import { Play } from "lucide-react";
-import heroImage from "../assets/images/first.png"; // Replace with your athlete image
 import { Dumbbell, ArrowRight } from "lucide-react";
 
 import { Clock3, IndianRupee } from "lucide-react";
@@ -8,6 +7,7 @@ import {
   FaInstagram,
   FaWhatsapp
 } from "react-icons/fa";
+import AgeSection from "./AgeSection";
 
 
 const Home = () => {
@@ -16,19 +16,19 @@ const Home = () => {
     title: "Calisthenics",
     image: "/imagess/program1.png",
     desc: "Master bodyweight strength, mobility and control.",
-    price: 999,
-    time: "8 weeks"
+    price: 1199,
+    time: "4 weeks"
   },
   {
-    title: "Strength",
-    image: "/imagess/program2.png",
+    title: "Fat Loss",
+    image: "/imagess/fatloss.png",
     desc: "Build explosive power with progressive training.",
      price: 899,
-    time: "6 weeks"
+    time: "4 weeks"
   },
   {
-    title: "Mobility",
-    image: "/imagess/program3.png",
+    title: "Zumba workout",
+    image: "/imagess/jumba.png",
     desc: "Increase flexibility and prevent injuries.",
      price: 999,
     time: "4 weeks"
@@ -36,177 +36,123 @@ const Home = () => {
 ];
   return (
     <>
-    <section className=" mt-2  relative overflow-hidden bg-[#0A0A0A] min-h-screen flex items-center">
+    <section className="mt-2 relative min-h-screen overflow-hidden flex items-center ">
+      <div >
 
-      {/* Background Glow */} 
-      <div className="absolute inset-0">
-        <div className="absolute -top-40 -left-40 w-[500px] h-[500px] rounded-full bg-orange-500/20 blur-[150px]" />
+  {/* ================= Background Video ================= */}
+  <div >
+   <video
+    autoPlay
+    muted
+    loop
+    playsInline
+    preload="auto"
+    className="absolute inset-0 w-full h-full object-cover brightness-[1.5]"
+  >
+    <source src="/videos/hv.mp4" type="video/mp4" />
+  
+  </video>
+  </div>
 
-        <div className="absolute bottom-0 right-0 w-[450px] h-[450px] rounded-full bg-orange-600/20 blur-[150px]" />
+  {/* Dark Overlay */}
+  <div className="absolute inset-0 bg-black/70"></div>
 
-        <div className="absolute top-1/2 left-1/2 w-[350px] h-[350px] rounded-full bg-orange-400/10 blur-[120px] -translate-x-1/2 -translate-y-1/2" />
-      </div>
+  {/* Orange Gradient Glow */}
+  <div className="absolute inset-0">
+    <div className="absolute -top-40 -left-40 w-[500px] h-[500px] rounded-full bg-orange-500/20 blur-[150px]" />
+    <div className="absolute bottom-0 right-0 w-[450px] h-[450px] rounded-full bg-orange-600/20 blur-[150px]" />
+    <div className="absolute top-1/2 left-1/2 w-[350px] h-[350px] rounded-full bg-orange-400/10 blur-[120px] -translate-x-1/2 -translate-y-1/2" />
+  </div>
 
-      <div className="relative max-w-7xl mx-auto px-6 lg:px-10 w-full">
+  {/* ================= Content ================= */}
+  <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 w-full">
 
-        <div className="grid lg:grid-cols-2 items-center gap-12">
+    <div className="grid lg:grid-cols-2 items-center gap-12">
 
-          {/* LEFT */}
+      {/* LEFT */}
+      <div>
 
-          <div>
+        <span className="mt-20 inline-flex items-center px-5 py-2 rounded-full bg-orange-500/20 backdrop-blur-md border border-orange-500 text-orange-400 text-sm font-medium tracking-widest uppercase">
+          🔥Calisthenics workout
+        </span>
 
-            <span className=" mt-20  inline-flex items-center px-5 py-2 rounded-full bg-orange-500/10 border border-orange-500 text-orange-400 text-sm font-medium tracking-widest uppercase">
+        <h1 className="mt-4 text-5xl md:text-6xl xl:text-7xl font-black text-white leading-tight">
+          BUILD
+          <br />
+          <span className="text-orange-500">
+            REAL STRENGTH
+          </span>
+          <br />
+          WITH YOUR
+          <br />
+          BODY.
+        </h1>
 
-              🔥 Street Workout & Calisthenics
+        <p className="mt-4 text-gray-200 text-lg leading-8 max-w-xl">
+          Train with experienced calisthenics coaches,
+          improve mobility, master bodyweight skills,
+          and become stronger every single day.
+        </p>
 
-            </span>
+        {/* Buttons */}
+        <div className="mt-1 flex flex-wrap gap-5">
 
-            <h1 className="mt-8 text-5xl md:text-6xl xl:text-7xl font-black text-white leading-tight">
-
-              BUILD
-
-              <br />
-
-              <span className="text-orange-500">
-
-                REAL STRENGTH
-
-              </span>
-
-              <br />
-
-              WITH YOUR
-
-              <br />
-
-              BODY.
-
-            </h1>
-
-            <p className="mt-8 text-gray-400 text-lg leading-8 max-w-xl">
-
-              Train with experienced calisthenics coaches,
-              improve mobility, master bodyweight skills,
-              and become stronger every single day.
-
-            </p>
-
-            <div className="mt-10 flex flex-wrap gap-5">
-
-              
-              <a href="https://wa.link/xsauiy" target="_blank" rel="noopener noreferrer"className="group mt-8 inline-flex w-60 items-center justify-center gap-3 rounded-2xl bg-gradient-to-r from-lime-400 via-lime-500 to-green-500 px-8 py-4 font-bold uppercase tracking-[3px] text-black shadow-[0_10px_30px_rgba(163,230,53,0.35)] transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:shadow-[0_15px_40px_rgba(163,23,53,0.55)] active:scale-90">
-              <FaWhatsapp className="text-2xl transition-transform duration-300 group-hover:rotate-12" />
-              <span>Start </span><ArrowRight size={20}  className="transition-transform duration-300 group-hover:translate-x-2"/>
-              </a> 
-         
-
-             
-
-
-            <a href="https://www.instagram.com/dr_ss_studio?igsh=a2xjOW5pdXBmMmNq" target="_blank" rel="noopener noreferrer"className="group mt-8 inline-flex w-60 items-center justify-center gap-3 rounded-2xl bg-gradient-to-r from-orange-400 via-orange-500 to-orange-500 px-8 py-4 font-bold uppercase tracking-[3px] text-black shadow-[0_10px_30px_rgba(163,230,53,0.35)] transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:shadow-[0_15px_40px_rgba(163,23,53,0.55)] active:scale-90">
-              <FaInstagram className="text-2xl transition-transform duration-300 group-hover:rotate-12" />
-              <Play size={18} />
-              <span>Follow </span><ArrowRight size={20}  className="transition-transform duration-300 group-hover:translate-x-2"/>
-              </a>
-                
-
-             
-
-            </div>
-
-            {/* Stats */}
-
-            <div className="grid grid-cols-3 gap-6 mt-16">
-
-              <div>
-
-                <h2 className="text-3xl font-bold text-orange-500">
-
-                  50+
-
-                </h2>
-
-                <p className="text-gray-400 mt-2">
-
-                  Members
-
-                </p>
-
-              </div>
-
-              <div>
-
-                <h2 className="text-3xl font-bold text-orange-500">
-
-                  5+
-
-                </h2>
-
-                <p className="text-gray-400 mt-2">
-
-                  Coaches
-
-                </p>
-
-              </div>
-
-              <div>
-
-                <h2 className="text-3xl font-bold text-orange-500">
-
-                  6 
-
-                </h2>
-
-                <p className="text-gray-400 mt-2">
-
-                  Days Open
-
-                </p>
-
-              </div>
-
-            </div>
-
-          </div>
-
-          {/* RIGHT */}
-
-          <div className="relative flex justify-center">
-
-            <div className="absolute w-[450px] h-[450px] rounded-full bg-orange-500/30 blur-[120px]" />
-
-            <img
-              src={heroImage}
-              alt="Calisthenics"
-              className="relative w-full max-w-lg drop-shadow-[0_40px_80px_rgba(249,115,22,0.45)]"
+          <a
+            href="https://wa.link/xsauiy"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group mt-8 inline-flex w-60 items-center justify-center gap-3 rounded-2xl bg-gradient-to-r from-lime-400 via-lime-500 to-green-500 px-8 py-4 font-bold uppercase tracking-[3px] text-black shadow-[0_10px_30px_rgba(163,230,53,0.35)] transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:shadow-[0_15px_40px_rgba(163,230,53,0.55)] active:scale-90"
+          >
+            <FaWhatsapp className="text-2xl transition-transform duration-300 group-hover:rotate-12" />
+            <span>Start</span>
+            <ArrowRight
+              size={20}
+              className="transition-transform duration-300 group-hover:translate-x-2"
             />
+          </a>
 
-            {/* Floating Card */}
-
-            <div className="absolute bottom-8 left-0 bg-[#161616] border border-orange-500/20 backdrop-blur-xl rounded-2xl p-5 shadow-xl">
-
-              <h3 className="text-white font-bold">
-
-                ⭐ Rated 4.6/5
-
-              </h3>
-
-              <p className="text-gray-400 text-sm mt-2">
-
-                25+ Happy Athletes
-
-              </p>
-
-            </div>
-            
-
-          </div>
-          
+          <a
+            href="https://www.instagram.com/dr_ss_studio?igsh=a2xjOW5pdXBmMmNq"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group mt-8 inline-flex w-60 items-center justify-center gap-3 rounded-2xl bg-gradient-to-r from-orange-400 via-orange-500 to-orange-500 px-8 py-4 font-bold uppercase tracking-[3px] text-black shadow-[0_10px_30px_rgba(163,230,53,0.35)] transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:shadow-[0_15px_40px_rgba(163,230,53,0.55)] active:scale-90"
+          >
+            <FaInstagram className="text-2xl transition-transform duration-300 group-hover:rotate-12" />
+            <Play size={18} />
+            <span>Follow</span>
+            <ArrowRight
+              size={20}
+              className="transition-transform duration-300 group-hover:translate-x-2"
+            />
+          </a>
 
         </div>
+
+        {/* Stats */}
+       
+
+      </div>
+
+      {/* RIGHT */}
+
+      <div className="hidden lg:flex justify-center relative">
+
+        <div className="absolute w-[450px] h-[450px] rounded-full bg-orange-500/30 blur-[120px]" />
+
+      
+
+      </div>
+
+    </div>
+
+  </div>
+  </div>
+    </section>
+
+        <AgeSection/>
         
-  <section className="bg-black py-12 mt-6 w-100">
+  <section className="bg-black py-12 mt-0 w-100">
+    
   <div className="max-w-7xl mx-auto px-6">
 
     <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -283,9 +229,7 @@ const Home = () => {
 
   </div>
 </section>
-
-      </div>
-    </section>
+    
 
 
       {/* program section here */}
