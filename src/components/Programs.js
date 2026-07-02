@@ -251,7 +251,7 @@ const data = {
 
                 <div className="flex text-center gap-1">
                  <button onClick={()=>{setSelectedProgram(course);setOpenModal(true);}}
-                 className="group mt-8 inline-flex w-40 items-center justify-center gap-2 rounded-2xl bg-gradient-to-r w-40 from-orange-400 via-lime-500 to-orange-500 px-4 py-4 font-bold uppercase tracking-[3px] text-black shadow-[0_10px_30px_rgba(163,230,53,0.35)] transition-all 
+                 className="group mt-8 inline-flex w-40 items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-orange-400 via-lime-500 to-orange-500 px-4 py-4 font-bold uppercase tracking-[3px] text-black shadow-[0_10px_30px_rgba(163,230,53,0.35)] transition-all 
                  duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:shadow-[0_15px_40px_rgba(163,230,53,0.55)] active:scale-95">
                  Preview
                  </button>

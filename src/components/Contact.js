@@ -132,7 +132,7 @@ export default function Contact() {
 
                       </p>
 
-                      <h3 className="mt-2 text-xl font-semibold text-white">
+                      <h3 className="mt-2 font-semibold text-white text-sm">
 
                         {item.value}
 

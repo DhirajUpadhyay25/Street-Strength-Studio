@@ -350,7 +350,7 @@ const Home = () => {
         </div>
     
     <div className=" mt-20 text-center flex items-center justify-center ">
-      <a href="/Programs">
+      <a href="/programs">
           <button className="group px-8 py-4  bg-orange-500 rounded-xl text-black font-bold flex items-center gap-3 hover:bg-green-400 duration-300">
 
                 View All Programs
