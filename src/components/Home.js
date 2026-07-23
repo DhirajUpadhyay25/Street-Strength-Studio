@@ -16,21 +16,21 @@ const Home = () => {
     title: "Calisthenics",
     image: "/imagess/program1.png",
     desc: "Master bodyweight strength, mobility and control.",
-    price: 1199,
+    price: 1499,
     time: "4 weeks"
   },
   {
     title: "Fat Loss",
     image: "/imagess/fatloss.png",
     desc: "Build explosive power with progressive training.",
-     price: 999,
+     price: 1199,
     time: "4 weeks"
   },
   {
-    title: "Zumba workout",
+    title: "Female workout",
     image: "/imagess/jumba.png",
     desc: "Increase flexibility and prevent injuries.",
-     price: 999,
+     price: 1199,
     time: "4 weeks"
   },
 ];
@@ -47,9 +47,8 @@ const Home = () => {
     loop
     playsInline
     preload="auto"
-    className="absolute inset-0 w-full h-full object-cover brightness-[1.5]"
-  >
-    <source src="/videos/hv.mp4" type="video/mp4" />
+    className="absolute inset-0 w-full h-full object-cover brightness-[1.5]">
+    <source src="/videos/vv1.mp4" type="video/mp4" />
   
   </video>
   </div>

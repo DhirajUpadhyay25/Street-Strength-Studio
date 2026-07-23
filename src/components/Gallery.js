@@ -10,7 +10,7 @@ import {
 const gallery = [
   {
     id: 1,
-    image: "/imagess/g8.jpeg",
+    image: "/imagess/g8.webp",
     title: "Studio",
     className: "md:row-span-2",
   },

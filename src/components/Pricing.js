@@ -10,15 +10,15 @@ import {
 export default function Pricing() {
   const plans = {
   Monthly: {
-    price: "₹999",
+    price: "₹1499",
     duration: "30 Days",
   },
   Quaterly: {
-    price: "₹2799",
+    price: "₹3899",
     duration: "90 Days",
   },
   Yearly: {
-    price: "₹9999",
+    price: "₹12999",
     duration: "365 Days",
   },
 };

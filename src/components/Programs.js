@@ -17,22 +17,22 @@ const data = {
   Beginner: [
     {
       id: 1,
-      title: "Calisthenics Basics",
+      title: "Calisthenics All",
       image: "/imagess/b1.png",
       video: "https://www.instagram.com/reel/DUqVjTdE-ES/?igsh=d3RqbDg4cmEzbTM1",
-      duration: "4 Weeks",
-      price: "₹999",
+      duration: "30 days",
+      price: "₹1499",
       level: "Beginner",
       description:
         "Learn proper push-up form, strength progression and endurance."
     },
     {
       id: 2,
-      title: "HandStand Basics",
+      title: "HandStand Beginner",
       image: "/imagess/b2.1.jpeg",
       video: "https://www.instagram.com/reel/DUc4oa6k-7J/?igsh=bDE5Yzlld3F0NDZz",
-      duration: "6 Weeks",
-      price: "₹999",
+      duration: "4 Weeks",
+      price: "1499",
       level: "Beginner",
       description:
         "develops strength, flexibility, balance, and coordination."
@@ -42,8 +42,8 @@ const data = {
       title: "Kick up and pull up",
       image: "/imagess/b2.png",
       video: "https://www.instagram.com/reel/DZaN32JJxDL/?igsh=djV1ZXRxcGF1a3l5",
-      duration: "6 Weeks",
-      price: "₹999",
+      duration: "4 Weeks",
+      price: "₹1299",
       level: "Beginner",
       description:
         "Dead Hang & Hollow Body Hold."
@@ -57,8 +57,8 @@ const data = {
       title: "Muscle-Up",
       image: "/imagess/i1.png",
       video: "https://www.instagram.com/reel/DVFQ9ork3x8/?igsh=MnVreDdlNmV5M2Zx",
-      duration: "8 Weeks",
-      price: "₹1299",
+      duration: "4 Weeks",
+      price: "₹1999",
       level: "Intermediate",
       description:
         "Master the muscle-up with explosive pulling power."
@@ -69,7 +69,7 @@ const data = {
       image: "/imagess/i2.png",
       video: "https://www.instagram.com/reel/DVFQ9ork3x8/?igsh=MnVreDdlNmV5M2Zx",
       duration: "8 Weeks",
-      price: "₹1199",
+      price: "₹1999",
       level: "Intermediate",
       description:
         "Master the Back lever with explosive pulling power."
@@ -79,7 +79,7 @@ const data = {
       image: "/imagess/i3.jpeg",
       video: "https://www.instagram.com/reel/DUVesl3k5lu/?igsh=MWI0MmFpczJueXdyMA==",
       duration: "8 Weeks",
-      price: "₹1199",
+      price: "₹1999",
       level: "Intermediate",
       description:
         "Finger push up with the push up to enhance explosive pulling power of fingers."
@@ -92,8 +92,8 @@ const data = {
       title: "Planche",
       image: "/imagess/b2.png",
       video: "https://www.instagram.com/reel/DVFQ9ork3x8/?igsh=MnVreDdlNmV5M2Zx",
-      duration: "8 Weeks",
-      price: "₹1599",
+      duration: "4 Weeks",
+      price: "₹2499",
       level: "Advanced",
       description:
         "Advanced planche strength program."
@@ -103,8 +103,8 @@ const data = {
       title: "Muscle-up",
       image: "/imagess/b2.1.jpeg",
       video: "https://www.instagram.com/reel/DVFQ9ork3x8/?igsh=MnVreDdlNmV5M2Zx",
-      duration: "12 Weeks",
-      price: "₹1899",
+      duration: "4 Weeks",
+      price: "₹2499",
       level: "Advanced",
       description:
         "Advanced planche strength program."
@@ -113,7 +113,7 @@ const data = {
       title: "pro Athlete",
       image: "/imagess/b3.png",
       video: "https://www.instagram.com/reel/DVFQ9ork3x8/?igsh=MnVreDdlNmV5M2Zx",
-      duration: "12 Weeks",
+      duration: "4 Weeks",
       price: "₹2499",
       level: "Advanced",
       description:
