@@ -1,29 +1,34 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Navbar from "./components/Navbar";
-
-import Home from "./components/Home";
-import About from "./components/About";
-import Programs from "./components/Programs";
-import Pricing from "./components/Pricing";
-import Gallery from "./components//Gallery";
-import Contact from "./components//Contact";
-import Footer from "./components/Footer";
+import React from 'react';
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import TrustStats from './components/TrustStats';
+import AboutStudio from './components/AboutStudio';
+import TrainingPrograms from './components/TrainingPrograms';
+import TrainingExperience from './components/TrainingExperience';
+import Gallery from './components/Gallery';
+import RegistrationForm from './components/RegistrationForm';
+import ContactSection from './components/ContactSection';
+import Footer from './components/Footer';
+import FloatingActions from './components/FloatingActions';
+import ConnectingLines from './components/ui/ConnectingLines';
 
 function App() {
   return (
     <>
-    <BrowserRouter>
-    <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/programs" element={<Programs />} />
-        <Route path="/pricing" element={<Pricing />} />
-        <Route path="/gallery" element={<Gallery />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
-      <Footer/>
-      </BrowserRouter>
+      <ConnectingLines />
+      <Navbar />
+      <main>
+        <Hero />
+        <TrustStats />
+        <AboutStudio />
+        <TrainingPrograms />
+        <TrainingExperience />
+        <Gallery />
+        <RegistrationForm />
+        <ContactSection />
+      </main>
+      <Footer />
+      <FloatingActions />
     </>
   );
 }

@@ -1,121 +1,146 @@
-import { Dumbbell } from "lucide-react";
-import {
-  FaInstagram,
-  FaFacebookF,
-  FaWhatsapp
-} from "react-icons/fa";
+import React from 'react';
+import { ArrowUp, Phone, Mail, MapPin, Clock } from 'lucide-react';
+import { FaInstagram, FaWhatsapp } from 'react-icons/fa';
+import Container from './ui/Container';
+import siteConfig from '../config/siteConfig';
 
 const Footer = () => {
+  const scrollToTop = (e) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleNavClick = (e, href) => {
+    e.preventDefault();
+    const target = document.querySelector(href);
+    if (target) {
+      const navHeight = 80;
+      const y = target.getBoundingClientRect().top + window.scrollY - navHeight;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    }
+  };
+
   return (
-    <footer className="bg-black text-gray-400 border-t border-zinc-700">
-      <div className="max-w-7xl mx-auto px-6 py-10">
+    <footer className="relative bg-[#050505] border-t border-white/5 pt-16 pb-8" role="contentinfo">
+      <Container>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8 mb-16">
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-
-          {/* Logo */}
-          <div>
-            <div className="flex items-center gap-4 mb-5">
-              <Dumbbell className="text-orange-500" size={20} />
-              <h2 className="text-3xl font-bold text-white">
-               Street Strength <span className="text-orange-500">Studio</span>
-              </h2>
-            </div>
-
-            <p className="leading-7">
-              Transform your body with professional calisthenics training and
-              personalized workout programs.
+          {/* Brand Column */}
+          <div className="lg:col-span-2 flex flex-col items-start text-left">
+            <a href="#home" onClick={(e) => handleNavClick(e, '#home')} className="flex items-center gap-3 mb-6 group">
+              <img src="/imagess/logo.png" alt="Street Strength Studio" className="w-10 h-10 object-contain transition-transform duration-500 group-hover:scale-110" width="40" height="40" loading="lazy" />
+              <div className="leading-tight">
+                <span className="text-sm font-extrabold tracking-wide text-white block">STREET STRENGTH</span>
+                <span className="text-xs font-bold tracking-[3px] text-brand-orange block">STUDIO</span>
+              </div>
+            </a>
+            <p className="text-gray-400 text-sm leading-relaxed max-w-xs mb-8">
+              {siteConfig.description}
             </p>
-              <div className=" mt-10 overflow-hidden rounded-3xl border border-orange-500/20 shadow-[0_0_40px_rgba(249,115,22,.15)]">
-
-        <iframe
-          title="Google Map"
-         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3508.9310873275435!2d77.31538177529274!3d28.421336175780738!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cdd707738a871%3A0x452e25c7e43b4474!2sStreet%20strength%20studio!5e0!3m2!1sen!2sin!4v1782735953532!5m2!1sen!2sin"
-          width="100%"
-          height="100"
-          style={{ border: 0 }}
-          loading="lazy"
-          allowFullScreen />
+            {/* Socials */}
+            <div className="flex gap-4">
+              <a
+                href={siteConfig.social.instagram.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:border-brand-orange hover:bg-brand-orange/10 transition-all duration-300"
+                aria-label="Instagram"
+              >
+                <FaInstagram size={18} />
+              </a>
+              <a
+                href={siteConfig.contact.whatsappLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:border-[#25D366] hover:bg-[#25D366]/10 transition-all duration-300"
+                aria-label="WhatsApp"
+              >
+                <FaWhatsapp size={18} />
+              </a>
+            </div>
           </div>
+
+          {/* Quick Links */}
+          <div className="lg:col-span-1">
+            <h3 className="text-white text-xs font-bold uppercase tracking-[3px] mb-4 lg:mb-6">Navigation</h3>
+            <ul className="flex flex-wrap gap-x-6 gap-y-3 lg:flex-col lg:space-y-4 lg:gap-0">
+              {siteConfig.navLinks.map((link) => (
+                <li key={link.label}>
+                  <a
+                    href={link.href}
+                    onClick={(e) => handleNavClick(e, link.href)}
+                    className="text-gray-400 text-sm hover:text-brand-orange transition-colors inline-block"
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
 
-          {/* Programs */}
-          <div>
-            <h3 className="text-white text-2xl font-bold mb-2">
-              PROGRAMS
-            </h3>
-
-            <ul className="space-y-3">
+          {/* Contact Details */}
+          <div className="lg:col-span-2">
+            <h3 className="text-white text-xs font-bold uppercase tracking-[3px] mb-6">Get in Touch</h3>
+            <ul className="space-y-5">
               <li>
-                <a href="/Programs" className="hover:text-orange-500">
-                  Beginner
+                <a href={`tel:${siteConfig.contact.phoneClean}`} className="flex items-start gap-3 group">
+                  <Phone size={18} className="text-brand-orange mt-0.5 flex-shrink-0 group-hover:scale-110 transition-transform" />
+                  <span className="text-gray-400 text-sm group-hover:text-white transition-colors">{siteConfig.contact.phone}</span>
                 </a>
               </li>
-
               <li>
-                <a href="/Programs" className="hover:text-orange-500">
-                  Intermediate
+                <a href={`mailto:${siteConfig.contact.email}`} className="flex items-start gap-3 group">
+                  <Mail size={18} className="text-brand-orange mt-0.5 flex-shrink-0 group-hover:scale-110 transition-transform" />
+                  <span className="text-gray-400 text-sm group-hover:text-white transition-colors">{siteConfig.contact.email}</span>
                 </a>
               </li>
-
               <li>
-                <a href="/Programs" className="hover:text-orange-500">
-                  Advanced
+                <a href={siteConfig.location.mapLink} target="_blank" rel="noopener noreferrer" className="flex items-start gap-3 group">
+                  <MapPin size={18} className="text-brand-orange mt-0.5 flex-shrink-0 group-hover:scale-110 transition-transform" />
+                  <span className="text-gray-400 text-sm group-hover:text-white transition-colors leading-relaxed max-w-[250px]">
+                    {siteConfig.location.address}
+                  </span>
                 </a>
               </li>
-
-              <li>
-                <a href="/Contact" className="hover:text-orange-500">
-                  Map
-                </a>
+              <li className="flex items-start gap-3">
+                <Clock size={18} className="text-gray-600 mt-0.5 flex-shrink-0" />
+                <span className="text-gray-500 text-sm leading-relaxed">
+                  {siteConfig.hours.display}
+                </span>
               </li>
             </ul>
           </div>
 
-          {/* Contact */}
-          <div>
-            <h3 className="text-white text-2xl font-bold mb-2">
-              CONTACT
-            </h3>
-
-            <p className="mb-2">📧 hiteshofficial010@gmail.com</p>
-            <p className="mb-2">📞 +91 9654563119 </p>
-            <p>📍 Sec-19 Faridabad, India</p>
-
-              <div className="flex gap-10 mt-10">
-          <a href="https://www.instagram.com/dr_ss_studio?igsh=a2xjOW5pdXBmMmNq" target="_blank" rel="noreferrer" className="hover:text-orange-500"><FaInstagram size={30} /></a>
-          <a href="https://www.instagram.com/hiten_calisthenics?igsh=MWpjdGlhYmFjeWZxNg==" target="_blank" rel="noreferrer" className="hover:text-orange-500"><FaFacebookF size={30} /></a>
-          <a href="https://wa.link/xsauiy" target="_blank" rel="noreferrer" className="hover:text-orange-500"><FaWhatsapp size={30} /></a>
-        </div>
-      
-          </div>
-           
-
         </div>
 
-        {/* Bottom */}
-
-        <div className="border-t border-zinc-800 mt-10 pt-3 flex flex-col md:flex-row justify-between items-center">
-
-          <p className="text-sm">
-            ©2026 <span className="text-orange-500">Street Strength Studio</span>. All Rights Reserved.
+        {/* Bottom Bar */}
+        <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
+          <p className="text-gray-600 text-xs">
+            © {new Date().getFullYear()}{' '}
+            <span className="text-gray-300 font-medium">{siteConfig.name}</span>. All rights reserved.
           </p>
-          <p className="text-sm">Developed by 
-         <a href="https://www.instagram.com/mr.dhiraj15?igsh=MXkxMmR3Ymcxczhtdg==" className="text-green-500"> @Dhiraj Upadhyay</a> 
+          <p className="text-gray-600 text-xs">
+            Developed by{' '}
+            <a
+              href={siteConfig.developer.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-brand-orange transition-colors font-medium"
+            >
+              @{siteConfig.developer.name}
+            </a>
           </p>
-
-          <div className="flex gap-10 mt-1 md:mt-0 text-sm">
-            <a href="/" className="hover:text-orange-500">
-              Privacy
-            </a>
-
-            <a href="/" className="hover:text-orange-500">
-              Terms
-            </a>
-          </div>
-
         </div>
+      </Container>
 
-      </div>
+      {/* Scroll to top — Ensure it doesn't block mobile floating actions by using mb-16 on mobile */}
+      <button
+        onClick={scrollToTop}
+        className="fixed bottom-24 lg:bottom-8 right-5 w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-brand-orange hover:border-brand-orange/30 hover:bg-brand-orange/10 transition-all z-40 backdrop-blur-md"
+        aria-label="Scroll to top"
+      >
+        <ArrowUp size={16} />
+      </button>
     </footer>
   );
 };
