@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import TrustStats from './components/TrustStats';
+import Leaderboard from './components/Leaderboard';
 import AboutStudio from './components/AboutStudio';
 import TrainingPrograms from './components/TrainingPrograms';
 import TrainingExperience from './components/TrainingExperience';
@@ -17,9 +18,10 @@ function App() {
     <>
       <ConnectingLines />
       <Navbar />
-      <main>
+      <main id="main-content">
         <Hero />
         <TrustStats />
+        <Leaderboard />
         <AboutStudio />
         <TrainingPrograms />
         <TrainingExperience />

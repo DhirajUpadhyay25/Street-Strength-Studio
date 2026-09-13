@@ -1,52 +1,55 @@
 import { useState, useEffect } from 'react';
 
 /**
- * useActiveSection — Tracks which section is currently in view
- * 
- * @param {Array} sectionIds - Array of section IDs to track (e.g. ['home', 'about', 'programs'])
- * @param {number} offset - Offset from top of screen to trigger active state
+ * useActiveSection — Smoothly tracks which section is currently active in the viewport
+ *
+ * @param {Array} sectionIds - Array of section IDs in DOM order (e.g. ['home', 'leaderboard', 'about', ...])
+ * @param {number} offset - Viewport offset to trigger section activation
  * @returns {string} - The currently active section ID
  */
-export default function useActiveSection(sectionIds, offset = 150) {
-  const [activeSection, setActiveSection] = useState(sectionIds[0]);
+export default function useActiveSection(sectionIds, offset = 120) {
+  const [activeSection, setActiveSection] = useState(sectionIds[0] || 'home');
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollPosition = window.scrollY + offset;
+      const scrollY = window.scrollY;
+      const windowHeight = window.innerHeight;
+      const totalHeight = document.documentElement.scrollHeight;
 
-      // Find the section that is currently in view
-      let currentSection = activeSection;
+      // 1. If at the very top of the page, activate home
+      if (scrollY < 120) {
+        setActiveSection(sectionIds[0] || 'home');
+        return;
+      }
 
-      for (const id of sectionIds) {
-        const element = document.getElementById(id);
-        if (element) {
-          const { top, bottom } = element.getBoundingClientRect();
-          const elementTop = top + window.scrollY;
-          const elementBottom = bottom + window.scrollY;
+      // 2. If at the bottom of the page, activate the last section (contact)
+      if (windowHeight + scrollY >= totalHeight - 120) {
+        setActiveSection(sectionIds[sectionIds.length - 1]);
+        return;
+      }
 
-          // If scroll position is within the element's bounds
-          if (scrollPosition >= elementTop && scrollPosition < elementBottom) {
-            currentSection = id;
-          }
+      // 3. Find the section currently in the viewport
+      let current = sectionIds[0] || 'home';
+
+      for (let i = 0; i < sectionIds.length; i++) {
+        const id = sectionIds[i];
+        const el = document.getElementById(id);
+        if (!el) continue;
+
+        const rect = el.getBoundingClientRect();
+
+        // If the top of the section has reached or passed the offset threshold,
+        // and its bottom hasn't completely left the top of the viewport
+        if (rect.top <= offset + 60 && rect.bottom > offset) {
+          current = id;
         }
       }
 
-      // Check for bottom of page (highlight last section if we hit the bottom)
-      if (
-        window.innerHeight + Math.round(window.scrollY) >= 
-        document.body.offsetHeight - 100
-      ) {
-        currentSection = sectionIds[sectionIds.length - 1];
-      }
-
-      if (currentSection !== activeSection) {
-        setActiveSection(currentSection);
-      }
+      setActiveSection(current);
     };
 
-    // Throttle scroll event slightly for performance
     let ticking = false;
-    const throttledScroll = () => {
+    const onScroll = () => {
       if (!ticking) {
         window.requestAnimationFrame(() => {
           handleScroll();
@@ -56,15 +59,13 @@ export default function useActiveSection(sectionIds, offset = 150) {
       }
     };
 
-    window.addEventListener('scroll', throttledScroll, { passive: true });
-    
-    // Initial check
-    handleScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    handleScroll(); // Initial evaluation on mount
 
     return () => {
-      window.removeEventListener('scroll', throttledScroll);
+      window.removeEventListener('scroll', onScroll);
     };
-  }, [sectionIds, activeSection, offset]);
+  }, [sectionIds, offset]);
 
   return activeSection;
 }

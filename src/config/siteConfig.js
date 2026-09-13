@@ -97,8 +97,9 @@ const siteConfig = {
 
   // ─── Navigation ───
   navLinks: [
-    { label: 'Programs', href: '#programs' },
+    { label: 'Leaderboard Rank', href: '#leaderboard' },
     { label: 'About', href: '#about' },
+    { label: 'Programs', href: '#programs' },
     { label: 'Experience', href: '#experience' },
     { label: 'Gallery', href: '#gallery' },
     { label: 'Contact', href: '#contact' },

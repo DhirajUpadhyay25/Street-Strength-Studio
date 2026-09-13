@@ -8,16 +8,19 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
   const { scrolled } = useScrolledNav(80);
-  
-  // Track active section for nav links
-  const sectionIds = ['home', ...siteConfig.navLinks.map(link => link.href.replace('#', ''))];
+
+  // Track active section for on-page hash nav links
+  const sectionIds = [
+    'home',
+    ...siteConfig.navLinks.map((link) => link.href.replace('#', '')),
+  ];
   const activeSection = useActiveSection(sectionIds, 150);
 
   // Track global scroll progress for top bar
   useEffect(() => {
     const handleScroll = () => {
       const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
-      const progress = (window.scrollY / totalHeight) * 100;
+      const progress = totalHeight > 0 ? (window.scrollY / totalHeight) * 100 : 0;
       setScrollProgress(progress);
     };
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -27,22 +30,32 @@ const Navbar = () => {
   // Lock body scroll when mobile menu is open
   useEffect(() => {
     document.body.style.overflow = isOpen ? 'hidden' : '';
-    return () => { document.body.style.overflow = ''; };
+    return () => {
+      document.body.style.overflow = '';
+    };
   }, [isOpen]);
 
   // Close menu on ESC
   useEffect(() => {
-    const handleEsc = (e) => { if (e.key === 'Escape') setIsOpen(false); };
+    const handleEsc = (e) => {
+      if (e.key === 'Escape') setIsOpen(false);
+    };
     window.addEventListener('keydown', handleEsc);
     return () => window.removeEventListener('keydown', handleEsc);
   }, []);
 
   const handleNavClick = useCallback((e, href) => {
-    e.preventDefault();
+    if (e) e.preventDefault();
     setIsOpen(false);
+
+    if (href === '#home') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+
     const target = document.querySelector(href);
     if (target) {
-      const navHeight = 80;
+      const navHeight = window.innerWidth < 640 ? 64 : 76;
       const y = target.getBoundingClientRect().top + window.scrollY - navHeight;
       window.scrollTo({ top: y, behavior: 'smooth' });
     }
@@ -52,24 +65,23 @@ const Navbar = () => {
     <>
       {/* ─── Desktop + Mobile Header ─── */}
       <header
-        className={`fixed top-0 left-0 w-full z-[var(--z-nav)] transition-all duration-500 ease-smooth ${
+        className={`fixed top-0 left-0 w-full z-[var(--z-nav)] transition-all duration-300 ease-smooth ${
           scrolled
-            ? 'bg-black/85 backdrop-blur-xl border-b border-white/5 shadow-lg shadow-black/20'
-            : 'bg-transparent'
+            ? 'bg-black/90 backdrop-blur-xl border-b border-white/10 shadow-xl shadow-black/40'
+            : 'bg-gradient-to-b from-black/80 via-black/40 to-transparent'
         }`}
         role="banner"
       >
         {/* ─── Scroll Progress Bar ─── */}
         <div className="absolute top-0 left-0 h-[2px] bg-white/5 w-full z-10">
-          <div 
-            className="h-full bg-brand-orange transition-all duration-150 ease-out" 
+          <div
+            className="h-full bg-brand-orange transition-all duration-150 ease-out"
             style={{ width: `${scrollProgress}%` }}
           />
         </div>
 
-        <div className="max-w-container mx-auto px-5 lg:px-10">
-          <div className="flex items-center justify-between h-20">
-
+        <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-10">
+          <div className={`flex items-center justify-between transition-all duration-300 ${scrolled ? 'h-16 sm:h-18' : 'h-18 sm:h-20'}`}>
             {/* ─── Logo ─── */}
             <a
               href="#home"
@@ -108,10 +120,10 @@ const Navbar = () => {
                     }`}
                   >
                     {link.label}
-                    <span 
+                    <span
                       className={`absolute left-0 -bottom-0.5 h-[2px] bg-brand-orange transition-all duration-300 ease-smooth ${
                         isActive ? 'w-full' : 'w-0 group-hover:w-full'
-                      }`} 
+                      }`}
                     />
                   </a>
                 );
@@ -120,12 +132,16 @@ const Navbar = () => {
 
             {/* ─── Desktop CTA ─── */}
             <a
-              href="#register"
-              onClick={(e) => handleNavClick(e, '#register')}
+              href="#contact"
+              onClick={(e) => handleNavClick(e, '#contact')}
               className="hidden lg:inline-flex items-center gap-2 px-5 py-2 rounded-button bg-brand-orange text-white text-[11px] font-bold uppercase tracking-[2px] transition-all duration-300 hover:bg-brand-orange-dark hover:-translate-y-0.5 hover:shadow-lg hover:shadow-brand-orange/30 group"
             >
               <span>Register Now</span>
-              <ArrowRight size={14} className="transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true" />
+              <ArrowRight
+                size={14}
+                className="transition-transform duration-300 group-hover:translate-x-1"
+                aria-hidden="true"
+              />
             </a>
 
             {/* ─── Mobile Menu Button ─── */}
@@ -172,10 +188,20 @@ const Navbar = () => {
               onClick={(e) => handleNavClick(e, '#home')}
               className="flex items-center gap-3"
             >
-              <img src="/imagess/logo.png" alt="Logo" className="w-9 h-9 object-contain" width="36" height="36" />
+              <img
+                src="/imagess/logo.png"
+                alt="Logo"
+                className="w-9 h-9 object-contain"
+                width="36"
+                height="36"
+              />
               <div className="leading-tight">
-                <span className="text-sm font-extrabold tracking-wide text-white block">STREET STRENGTH</span>
-                <span className="text-xs font-bold tracking-[3px] text-brand-orange block">STUDIO</span>
+                <span className="text-sm font-extrabold tracking-wide text-white block">
+                  STREET STRENGTH
+                </span>
+                <span className="text-xs font-bold tracking-[3px] text-brand-orange block">
+                  STUDIO
+                </span>
               </div>
             </a>
             <button
@@ -189,21 +215,26 @@ const Navbar = () => {
 
           {/* Nav Links */}
           <nav className="flex flex-col px-6 pt-8 gap-1" aria-label="Mobile navigation">
-            {siteConfig.navLinks.map((link, i) => (
-              <a
-                key={link.label}
-                href={link.href}
-                onClick={(e) => handleNavClick(e, link.href)}
-                className="text-xl font-semibold uppercase tracking-[3px] text-gray-300 hover:text-brand-orange py-3 border-b border-white/5 transition-all duration-300"
-                style={{
-                  opacity: isOpen ? 1 : 0,
-                  transform: isOpen ? 'translateX(0)' : 'translateX(30px)',
-                  transition: `all 0.4s cubic-bezier(0.16, 1, 0.3, 1) ${i * 0.06 + 0.15}s`,
-                }}
-              >
-                {link.label}
-              </a>
-            ))}
+            {siteConfig.navLinks.map((link, i) => {
+              const isActive = activeSection === link.href.replace('#', '');
+              return (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  onClick={(e) => handleNavClick(e, link.href)}
+                  className={`text-xl font-semibold uppercase tracking-[3px] py-3 border-b border-white/5 transition-all duration-300 ${
+                    isActive ? 'text-brand-orange' : 'text-gray-300 hover:text-brand-orange'
+                  }`}
+                  style={{
+                    opacity: isOpen ? 1 : 0,
+                    transform: isOpen ? 'translateX(0)' : 'translateX(30px)',
+                    transition: `all 0.4s cubic-bezier(0.16, 1, 0.3, 1) ${i * 0.06 + 0.15}s`,
+                  }}
+                >
+                  {link.label}
+                </a>
+              );
+            })}
           </nav>
 
           {/* Mobile CTA */}
@@ -232,10 +263,16 @@ const Navbar = () => {
             }}
           >
             <p className="text-gray-500 text-xs uppercase tracking-wider mb-2">Contact</p>
-            <a href={`tel:${siteConfig.contact.phoneClean}`} className="text-gray-400 text-sm hover:text-brand-orange transition-colors block">
+            <a
+              href={`tel:${siteConfig.contact.phoneClean}`}
+              className="text-gray-400 text-sm hover:text-brand-orange transition-colors block"
+            >
               {siteConfig.contact.phone}
             </a>
-            <a href={`mailto:${siteConfig.contact.email}`} className="text-gray-400 text-sm hover:text-brand-orange transition-colors block mt-1">
+            <a
+              href={`mailto:${siteConfig.contact.email}`}
+              className="text-gray-400 text-sm hover:text-brand-orange transition-colors block mt-1"
+            >
               {siteConfig.contact.email}
             </a>
           </div>
